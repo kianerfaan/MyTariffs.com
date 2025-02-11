@@ -148,7 +148,7 @@ The application is designed to be deployed on platforms supporting Node.js and P
 
 ## License
 
-MIT License - see LICENSE file for details
+Apache-2.0 - see LICENSE file for details
 
 ## Acknowledgments
 
