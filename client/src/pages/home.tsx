@@ -4,6 +4,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { TrendingUp, Search, RefreshCw, ThumbsUp, ThumbsDown } from "lucide-react";
+import { SiGithub } from "react-icons/si";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -93,9 +94,20 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#F8FAFC] to-[#EFF6FF]">
       <div className="flex-grow p-4 md:p-8 transition-all duration-300">
         <div className="max-w-6xl mx-auto space-y-8">
-          <header className="flex items-center gap-3 text-[#0A4D68] transition-all duration-300 hover:transform hover:translate-y-[-2px]">
-            <TrendingUp className="h-8 w-8" />
-            <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">MyTariffs.com</h1>
+          <header className="flex items-center justify-between text-[#0A4D68] transition-all duration-300 py-4">
+            <div className="flex items-center gap-3 hover:transform hover:translate-y-[-2px]">
+              <TrendingUp className="h-8 w-8" />
+              <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">MyTariffs.com</h1>
+            </div>
+            <a 
+              href="https://github.com/kianerfaan/MyTariffs.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[#116A8C] transition-colors duration-200"
+            >
+              <SiGithub className="h-6 w-6" />
+              <span className="md:inline">Visit on GitHub</span>
+            </a>
           </header>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -273,7 +285,7 @@ export default function Home() {
       <footer className="mt-auto backdrop-blur-sm bg-white/80 border-t border-[#E2E8F0] py-8">
         <div className="max-w-6xl mx-auto px-4 space-y-4">
           <div className="text-sm text-[#64748B] text-center">
-            <p className="mb-2">© 2025 All Rights Reserved. Built by <a href="https://x.com/kianerfaan" className="text-[#0A4D68] hover:text-[#116A8C] transition-colors duration-200" target="_blank" rel="noopener noreferrer">Kian Erfaan</a></p>
+            <p className="mb-2">© 2025 All Rights Reserved.</p>
             <p className="text-xs max-w-2xl mx-auto">
               MyTariffs.com provides tariff data for informational purposes only, without warranty or liability. 
               Use at your own risk; no legal, financial, or regulatory advice is offered.
