@@ -1,157 +1,109 @@
-# MyTariffs.com - Tariff Rate Information System
+# MyTariffs.com
 
-A modern web application for retrieving and displaying international tariff rates, powered by GROQ's Mixtral-8x7b-32768 model for accurate tariff classification and rate determination.
+![MIT License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
-## Tech Stack
+A responsive web application for retrieving and displaying international trade tariff information, leveraging Groq AI to provide accurate tariff rates between countries for specific products.
 
-### Frontend
-- **Framework**: React 18 with TypeScript
-- **Routing**: Wouter for lightweight client-side routing
-- **State Management**: TanStack Query (React Query) v5
-- **Form Handling**: React Hook Form with Zod validation
-- **UI Components**: ShadcN UI components with Tailwind CSS
-- **Styling**: 
-  - Tailwind CSS for utility-first styling
-  - CSS Variables for theming
-  - Custom theme configuration via theme.json
+![MyTariffs.com Screenshot](./docs/screenshot.png)
 
-### Backend
-- **Runtime**: Node.js 20
-- **Server**: Express.js
-- **Database**: PostgreSQL with Drizzle ORM
-  - Drizzle Kit for schema management
-  - Connection via @neondatabase/serverless
-- **API Integration**: GROQ Cloud API (Mixtral-8x7b-32768 model)
+## 🌟 Features
 
-### Development Environment
-- **Build Tool**: Vite
-- **Type Checking**: TypeScript
-- **Development Server**: Custom Express + Vite setup for unified backend/frontend development
-- **Package Management**: npm
+- **Instant Tariff Rate Lookup**: Quickly find tariff rates for products being traded between countries
+- **AI-Powered Analysis**: Uses Groq's Mixtral-8x7b-32768 model to analyze and determine appropriate tariff rates
+- **Recent Queries History**: View recently searched tariff information
+- **Query Feedback System**: Provide feedback on the accuracy of returned tariff information
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-## Features
+## 🚀 Getting Started
 
-- Real-time tariff rate lookups between countries
-- AI-powered tariff classification
-- User feedback system
-- Responsive design
-- Historical query tracking
-- Error handling and validation
+### Prerequisites
 
-## Project Structure
-
-```
-├── client/
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── hooks/        # Custom React hooks
-│   │   ├── lib/          # Utility functions and API clients
-│   │   ├── pages/        # Route components
-│   │   └── App.tsx       # Root component
-├── server/
-│   ├── routes.ts         # Express routes
-│   ├── storage.ts        # Database operations
-│   └── db.ts            # Database configuration
-├── shared/
-│   ├── schema.ts        # Shared TypeScript types and Zod schemas
-│   └── groq.ts          # GROQ API integration
-```
-
-## Prerequisites
-
-- Node.js 20 or later
+- Node.js (v18 or later)
 - PostgreSQL database
-- GROQ API key
+- Groq API key
 
-## Environment Variables
-
-```env
-DATABASE_URL=postgresql://user:password@host:port/database
-GROQ_API_KEY_3=your_groq_api_key
-```
-
-## Getting Started
+### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/mytariffs.com.git
-   cd mytariffs.com
+   ```
+   git clone https://github.com/kianerfaan/MyTariffs.com.git
+   cd MyTariffs.com
    ```
 
 2. Install dependencies:
-   ```bash
+   ```
    npm install
    ```
 
-3. Set up the database:
-   ```bash
+3. Set up environment variables by creating a `.env` file:
+   ```
+   DATABASE_URL=postgresql://username:password@localhost:5432/mytariffs
+   GROQ_API_KEY_3=your_groq_api_key
+   ```
+
+4. Initialize the database:
+   ```
    npm run db:push
    ```
 
-4. Start the development server:
-   ```bash
+5. Start the development server:
+   ```
    npm run dev
    ```
 
-The application will be available at `http://localhost:5000`.
+6. Open your browser and visit `http://localhost:5000`
 
-## Development
+## 📚 Technology Stack
 
-- The development server runs both the frontend and backend on port 5000
-- Frontend hot reloading is enabled via Vite
-- Backend changes trigger automatic server restart
-- Database schema changes are managed through Drizzle
+- **Frontend**: React, TypeScript, Tailwind CSS, shadcn/ui
+- **Backend**: Express.js, PostgreSQL
+- **AI Integration**: Groq API (Mixtral-8x7b-32768 model)
+- **API Management**: TanStack Query
+- **Form Handling**: React Hook Form with Zod validation
+- **Database ORM**: Drizzle ORM
 
-## API Documentation
+## 🤝 Contributing
 
-### Tariff Query Endpoint
-```typescript
-POST /api/tariff/query
-Body: {
-  importerCountry: string;
-  exporterCountry: string;
-  productDescription: string;
-}
-```
-
-### Feedback Endpoint
-```typescript
-POST /api/tariff/feedback
-Body: {
-  queryId: number;
-  isPositive: boolean;
-}
-```
-
-## Deployment
-
-The application is designed to be deployed on platforms supporting Node.js and PostgreSQL. Make sure to:
-
-1. Set up the required environment variables
-2. Run database migrations
-3. Build the frontend assets:
-   ```bash
-   npm run build
-   ```
-4. Start the production server:
-   ```bash
-   npm start
-   ```
-
-## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+### Development Guidelines
 
-Apache-2.0 - see LICENSE file for details
+- Follow the existing code style and organization
+- Write unit tests for new features
+- Update documentation as needed
+- Make sure all tests pass before submitting a PR
 
-## Acknowledgments
+## 📋 Project Structure
 
-- GROQ Cloud for providing the Mixtral-8x7b-32768 model API
-- ShadcN UI for the component library
-- The Drizzle ORM team
+```
+/
+├── client/                  # Frontend code
+│   ├── src/
+│   │   ├── components/      # UI components
+│   │   ├── hooks/           # Custom React hooks
+│   │   ├── lib/             # Utility functions
+│   │   ├── pages/           # Page components
+│   │   └── App.tsx          # Main application component
+├── server/                  # Backend code
+│   ├── routes.ts            # API routes
+│   ├── storage.ts           # Database interaction
+│   └── index.ts             # Server setup
+├── shared/                  # Shared code
+│   ├── groq.ts              # Groq API integration
+│   └── schema.ts            # Database schema
+└── .env                     # Environment variables
+```
+
+## 📄 License
+
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+Project Link: [https://github.com/kianerfaan/MyTariffs.com](https://github.com/kianerfaan/MyTariffs.com)
