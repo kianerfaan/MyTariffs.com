@@ -6,8 +6,6 @@ Domain mytariffs.com was sold to Namecheap user loganweaver1818 on May 17, 2025.
 
 A responsive web application for retrieving and displaying international trade tariff information, leveraging Groq AI to provide accurate tariff rates between countries for specific products.
 
-![MyTariffs.com Screenshot](./docs/screenshot.png)
-
 ## 🌟 Features
 
 - **Instant Tariff Rate Lookup**: Quickly find tariff rates for products being traded between countries
@@ -105,7 +103,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📄 License
 
 This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-Project Link: [https://github.com/kianerfaan/MyTariffs.com](https://github.com/kianerfaan/MyTariffs.com)
