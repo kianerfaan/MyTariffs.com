@@ -1,4 +1,6 @@
-# MyTariffs.com
+# MyTariffs-replit.app
+
+Domain mytariffs.com was sold to Namecheap user loganweaver1818 on May 17, 2025.
 
 ![MIT License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
